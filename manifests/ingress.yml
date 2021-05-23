@@ -1,8 +1,7 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: "aws-example-octodex-ingress"
-  namespace: "default"
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
@@ -10,9 +9,11 @@ metadata:
     app: aws-example-octodex-ingress
 spec:
   rules:
-    - http:
-        paths:
-          - path: /*
-            backend:
-              serviceName: "aws-example-octodex"
-              servicePort: 80
+    http:
+      paths:
+       - backend:
+          service:
+            name: "aws-example-octodex"
+            port:
+              number: 80
+          path: /*
