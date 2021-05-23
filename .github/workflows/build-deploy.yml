@@ -29,8 +29,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      AWS_REGION: us-west-2
-      EKS_CLUSTER_NAME: eden-app-backend-cluster
+      AWS_REGION: us-east-2
+      EKS_CLUSTER_NAME: eden-app-backend
 
     steps:
     - name: Checkout
@@ -51,7 +51,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: example-eks
+        ECR_REPOSITORY: eden-app-repo
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
