@@ -29,8 +29,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      AWS_REGION: eu-west-1
-      EKS_CLUSTER_NAME: fantastic-party-9999999999
+      AWS_REGION: us-west-2
+      EKS_CLUSTER_NAME: eden-app-backend-cluster
 
     steps:
     - name: Checkout
