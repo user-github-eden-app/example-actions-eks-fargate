@@ -9,13 +9,12 @@ metadata:
     app: aws-example-octodex-ingress
 spec:
   rules:
-  - host: example.com
-    http:
+  - http:
       paths:
-       - backend:
+      - path: /
+        pathType: Prefix
+        backend:
           service:
-            name: "aws-example-octodex"
+            name: aws-example-octodex
             port:
               number: 80
-          path: /
-          pathType: Exact
