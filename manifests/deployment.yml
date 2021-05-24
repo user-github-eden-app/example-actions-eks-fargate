@@ -2,29 +2,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: aws-example-octodex
   labels:
-    app: aws-example-octodex
+    app.kubernetes.io/name: aws-example-octodex-deployment
+  name: aws-example-octodex
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: aws-example-octodex
+      app.kubernetes.io/name: aws-example-octodex
   template:
     metadata:
       labels:
-        app: aws-example-octodex
+        app.kubernetes.io/name: aws-example-octodex
     spec:
       containers:
       - name: aws-example-octodex
-        # image: 00000000000000.dkr.ecr.my-region.amazonaws.com/example-eks:tag
-        # image: REGISTRY/REPO:TAG
-        # The full image will be dynamically added by Kustomize in the workflow.
         image: example-eks
         ports:
-        - containerPort: 5000
-        resources:
-          requests:
-            cpu: 250m
-          limits:
-            cpu: 500m
+          - name: http
+            containerPort: 5000
+            protocol: TCP
