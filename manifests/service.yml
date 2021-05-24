@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: aws-example-octodex-service
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
   - port: 80
     targetPort: 5000
