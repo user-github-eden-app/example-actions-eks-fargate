@@ -21,4 +21,4 @@ spec:
           - path: /*
             backend:
               serviceName: aws-example-octodex-service
-              servicePort: 5000
+              servicePort: 80
