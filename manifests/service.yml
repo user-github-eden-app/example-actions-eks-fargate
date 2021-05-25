@@ -6,8 +6,8 @@ spec:
   type: NodePort
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 5000
     protocol: TCP
     name: http-healthcheck
   selector:
-    app.kubernetes.io/name: aws-example-octodex
+    app.kubernetes.io/name: aws-example-octodex-app
