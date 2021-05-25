@@ -3,17 +3,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app.kubernetes.io/name: aws-example-octodex-deployment
+    app.kubernetes.io/name: aws-example-octodex-app
   name: aws-example-octodex-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: aws-example-octodex-deployment
+      app.kubernetes.io/name: aws-example-octodex-app
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: aws-example-octodex-deployment
+        app.kubernetes.io/name: aws-example-octodex-app
     spec:
       containers:
       - name: app
