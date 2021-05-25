@@ -10,4 +10,4 @@ spec:
     protocol: TCP
     name: http-healthcheck
   selector:
-    app.kubernetes.io/name: aws-example-octodex-service
+    app.kubernetes.io/name: aws-example-octodex
