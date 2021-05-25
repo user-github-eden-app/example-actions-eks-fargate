@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/name: aws-example-octodex-app
-  name: aws-example-octodex-deployment
+  name: aws-example-octodex-app
 spec:
   replicas: 1
   selector:
