@@ -16,7 +16,7 @@ spec:
         app.kubernetes.io/name: aws-example-octodex-deployment
     spec:
       containers:
-      - name: app
+      - name: aws-example-octodex-deployment
         image: example-eks
         ports:
           - name: http
